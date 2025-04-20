@@ -26,3 +26,18 @@ Optional keyword in anaconda file:
 
 Using nmcli to create keyfile connection profiles in offline mode:
  https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/assembly_networkmanager-connection-profiles-in-keyfile-format_configuring-and-managing-networking#proc_using-nmcli-to-create-keyfile-connection-profiles-in-offline-mode_assembly_networkmanager-connection-profiles-in-keyfile-format
+
+Subscription Commands used in video for Step 5:
+subscription-manager register
+rm /etc/yum.repos.d/*.repo
+subscription-manager config --rhsm.manage_repos=1
+subscription-manager repos > /root/repolist.txt
+subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
+subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms  
+mkdir /opt/incoming/updates -p
+dnf update --downloadonly –downloaddir=.
+
+subscription-manager unregister
+subscription-manager remove –all
+
+
