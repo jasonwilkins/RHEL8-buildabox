@@ -31,6 +31,7 @@ Subscription Commands used in video for Step 5:
 subscription-manager register
 rm /etc/yum.repos.d/*.repo
 subscription-manager config --rhsm.manage_repos=1
+dnf clean all
 subscription-manager repos > /root/repolist.txt
 subscription-manager repos --enable=rhel-8-for-x86_64-baseos-rpms
 subscription-manager repos --enable=rhel-8-for-x86_64-appstream-rpms  
